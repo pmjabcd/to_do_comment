@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="time">
+        <h1>{{a_article.title}}</h1>
+        <p>{{a_article.content}}</p>
+        ★마감기간 나타내는거.... ㅠ.ㅠ 
+        a_article.due_date 해서 order by...? 
+    </div>
+    <div class="three_buttons">
+        <div><a class="button" href="{% url 'index_i_will_use_in_html' %}">메인화면</a></div>
+        <div><a class="button" href="{% url 'edit_i_will_use_in_html' ★pk 나타내기 ★ %}">수정하기</a></div>
+        <div><a class="button" href="{% url 'edit_i_will_use_in_html' ★pk 나타내기 ★ %}">삭제하기</a></div>
+
+<!-- a.article이 views.py에서 보면 내가 선택한건데.... 여기서 title을 가지고 온다? @_@ -->
+
+        {% for comment in Article.Comment.all %}
+        <li>{{comment.content}}</li>
+        <a href="{url 'delete_comment' article.pk comment.pk %}">댓글삭제</a>
+        {% endfor %}
+        
+        <!-- 저기.... article, comment 변수 잘못된듯... -->
+        <!-- 질문 -> 댓글들을 다~~ 불러와서 지우는건가? 이해하기론 그런데 ㅠㅠ  -->
+
+        <form method="POST">
+            {% csrf_token %}
+            <input type="text" name="content" placeholder="댓글을 입력해주세요">
+            <button type="submit">댓글 쓰기</button>
+        </form>
+    </div>
+</body>
+</html>

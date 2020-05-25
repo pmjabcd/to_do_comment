@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="header">
+        {% for each_article in Aricle %}
+            <a href="{% url 'detail_i_will_use_in_html' each_article.pk %}">{{each_article.title}}</a>
+        {% endfor %}
+    </div>
+    <br>
+    <div class="add">
+        <a href="{% url 'new_i_will_use_in_html'%}">일정추가</a>
+    </div>
+</body>
+</html>
+
+<!-- 저기 url 자리가... all 불러온 index인지, pk 불러온 detail인지...? -->

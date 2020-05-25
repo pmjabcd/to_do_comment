@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form method="POST">
+        {% csrf_token %}
+        <input name="title" placeholder="제목을 입력해주세요">
+        <input name="content" placeholder="내용을 입력해주세요">
+        ★ 마감기한 입력 ㅠㅠ 구글링해보니 settings에 적용해주던데...★
+        <button type="submit">제출</button>
+    </form>
+</body>
+</html>
